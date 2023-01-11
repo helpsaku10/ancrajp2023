@@ -1,8 +1,6 @@
-resource stg 'Microsoft.Storage/storageAccounts@2021-02-01' = {
-    name: uniqueString(resourceGroup().id)
-    location: 'japaneast'
-    kind: 'Storage'
-    sku: {
-        name: 'Standard_LRS'
-    }
+targetScope = 'subscription'
+
+resource test 'Microsoft.Resources/resourceGroups@2022-09-01' = {
+  name: 'testRG'
+  location: 'JapanEast'
 }
