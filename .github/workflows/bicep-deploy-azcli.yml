@@ -13,7 +13,7 @@ jobs:
     name: 'BicepDeploy with Azure CLI'
     runs-on: ubuntu-latest
     env:
-      ResourceGroupName: ancrajp2023
+      ResourceGroupName: ancrajp0000
       ResourceGroupLocation: "JapanEast"
     environment: production
 
@@ -30,5 +30,5 @@ jobs:
       with:
         inlineScript: |
           #!/bin/bash
-           az deployment sub create --location 'JapanEast' --templatefile main.bicep
+           az deployment sub create --location 'JapanEast' --template-file main.bicep
 
