@@ -13,8 +13,8 @@ jobs:
     name: 'BicepDeploy with Azure CLI'
     runs-on: ubuntu-latest
     env:
-      ResourceGroupName: rg-bicep-samples
-      ResourceGroupLocation: "japaneast"
+      ResourceGroupName: ancrajp2023
+      ResourceGroupLocation: "JapanEast"
     environment: production
 
     steps:
