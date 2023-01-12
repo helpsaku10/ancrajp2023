@@ -1,6 +1,7 @@
 targetScope = 'subscription'
 
-var resourceGroup = 'ancrajp2023-02'
+
+var resourceGroup = 'ancrajp2023-03'
 var storageAccountname = 'ancrajp9999'
 
 resource test  'Microsoft.Resources/resourceGroups@2022-09-01' = {
