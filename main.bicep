@@ -1,21 +1,18 @@
 targetScope = 'subscription'
+var prefix = 'ancra'
+var resourceGroup = '${prefix}vm'
 
-
-var resourceGroup = 'ancrajp2023-03'
-var storageAccountname = 'ancrajp9999'
-
-resource test  'Microsoft.Resources/resourceGroups@2022-09-01' = {
+resource vmresourceGroup  'Microsoft.Resources/resourceGroups@2022-09-01' = {
   name: resourceGroup
   location: 'JapanEast'
 }
 
-module storage 'storage.bicep' = {
-  scope: test
-  name: 'storage-deploy'
-
-  params: {
-    storageAccountname: storageAccountname
+module vm 'vm.bicep' = {
+  scope: vmresourceGroup
+   name:'vm-deploy'
+  params {
+    vnetName:'${prefix}subnet'
+    publicIPaddressName:'${prefix}publicIP'
+    nicName:'${prefix}nic'
   }
 }
-
-
