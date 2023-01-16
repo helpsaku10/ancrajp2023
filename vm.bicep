@@ -1,7 +1,7 @@
 
 param publicIPaddressName string
 param nicName string
-param vnetName string
+param VnetName string
 
 resource publicIP 'Microsoft.Network/publicIPAddresses@2022-07-01' = {
   name: publicIPaddressName

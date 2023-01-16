@@ -12,7 +12,7 @@ module vm 'vm.bicep' = {
   scope: vmresourceGroup
    name:'vm-deploy'
   params:{
-    vnetName:'${prefix}subnet'
+    VnetName:'${prefix}subnet'
     publicIPaddressName:'${prefix}publicIP'
     nicName:'${prefix}nic'
   }
