@@ -1,7 +1,7 @@
 
 param publicIPaddressName string
 param nicName string
-param VnetName string
+param vnetName string
 
 resource publicIP 'Microsoft.Network/publicIPAddresses@2022-07-01' = {
   name: publicIPaddressName
@@ -9,7 +9,7 @@ resource publicIP 'Microsoft.Network/publicIPAddresses@2022-07-01' = {
 
 resource Vnet 'Microsoft.Network/virtualNetworks@2022-07-01' = {
   name: VnetName
-  location:resourceGroup().location
+  location: resourceGroup().location
    properties: {
     addressSpace: {
        addressPrefixes: [
@@ -35,6 +35,9 @@ resource nic 'Microsoft.Network/networkInterfaces@2022-07-01' = {
          name:'ipconfig1'
          properties: {
           subnet:Vnet.properties.subnets[0]
+           publicIPAddress:{
+            id:publicIP.id
+           }
          }
         }
     ]
