@@ -17,5 +17,4 @@ module vm 'vm.bicep' = {
     nicName:'${prefix}nic'
   }
   }
-}
 
